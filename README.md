@@ -21,9 +21,9 @@ Here are the features:
 If you don't have pre-built U Disk, you can download the release file and build for yourself.
 
 ```
-wget $GITHUB_RELEASE_FILE
+wget https://github.com/tobegit3hub/PortableOpenMLDB/releases/download/v0.7.1/portable-openmldb.tar.gz
 
-tar xzvf $GITHUB_RELEASE_FILE
+tar xzf ./portable_openmldb.tar.gz
 ```
 
 The downloaded files can be put in any directory and run OpenMLDB without network.

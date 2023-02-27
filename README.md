@@ -21,7 +21,7 @@ Here are the features:
 If you don't have pre-built U Disk, you can download the release file and build for yourself.
 
 ```
-wget https://github.com/tobegit3hub/PortableOpenMLDB/releases/download/v0.7.1/portable-openmldb.tar.gz
+wget http://topic-land.com:39137/portable_openmldb/0.7.1/portable_openmldb.tar.gz
 
 tar xzf ./portable_openmldb.tar.gz
 ```

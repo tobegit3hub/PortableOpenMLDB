@@ -6,8 +6,8 @@ Here are the features:
 
 * Setup and start OpenMLDB cluster without network.
 * Encapsulated in U Disk which can be run anywhere.
-* Easy to upgrade to the latest OpenMLDB version.
-* Persist the data of OpenMLDB with custom U Disk.
+* Easy to upgrade with the latest OpenMLDB version.
+* Persist the data of OpenMLDB cluster in U Disk.
 
 ## Usage
 
@@ -26,7 +26,7 @@ wget $GITHUB_RELEASE_FILE
 tar xzvf $GITHUB_RELEASE_FILE
 ```
 
-The downloaded files can put in any directory and run OpenMLDB without network.
+The downloaded files can be put in any directory and run OpenMLDB without network.
 
 ## Upgrade OpenMLDB
 

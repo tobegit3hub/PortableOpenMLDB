@@ -15,11 +15,12 @@ while true; do
     --clear \
     --cancel-label "Exit" \
     --menu "Please select:" $HEIGHT $WIDTH 0 \
-    "1"  "Start OpenMLDB cluster" \
-    "2" "Stop OpenMLDB cluster" \
+    "1" "Start   OpenMLDB cluster" \
+    "2" "Stop    OpenMLDB cluster" \
     "3" "Cleanup OpenMLDB cluster" \
-    "4" "Test OpenMLDb cluster" \
-    "5"  "Run OpenMLDB CLI" \
+    "4" "Upgrade OpenMLDB cluster" \
+    "5" "Test    OpenMLDb cluster" \
+    "6" "Run     OpenMLDB CLI" \
     2>&1 1>&3)
   exit_status=$?
   exec 3>&-
@@ -52,9 +53,12 @@ while true; do
       ./cleanup.sh
       ;;
     4 )
-      ./test.sh
+      ./upgrade.sh
       ;;
     5 )
+      ./test.sh
+      ;;
+    6 )
       ./openmldb_cli.sh
       ;;
   esac

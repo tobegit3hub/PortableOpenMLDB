@@ -1,18 +1,19 @@
 # Portable OpenMLDB
 
-The portable and out-of-the-box OpenMLDB cluster which can be run offline.
+The portable OpenMLDB cluster which can be run offline without installation.
 
 Here are the features:
 
-* Setup and start OpenMLDB cluster **without network**.
-* **Encapsulated in U Disk** which can be run anywhere.
-* Easy to **upgrade with the latest OpenMLDB** version.
-* **Persist the data** of OpenMLDB cluster in U Disk.
+* Decompress OpenMLDB cluster **without installation**.
+* Start and access OpenMLDB cluster **without network**.
+* **Encapsulated in U Disk** or hard disk to run anywhere.
+* Integraded to **upgrade for the latest OpenMLDB** version.
+* **Persist the data** of OpenMLDB cluster in your U Disk.
 
 ## Usage
 
-1. Insert the U Disk or download the pre-built package file.
-2. Start and stop OpenMLDB cluster with `start.sh` and `stop.sh`.
+1. Insert the pre-built U Disk or decomporess the package file.
+2. Start the OpenMLDB cluster with `start.sh` in offline mode.
 3. Test OpenMLDB cluster with `test.sh` and `openmldb_cli.sh`.
 
 If you have installed `dialog`, use `console.sh` just like other GUI applications.

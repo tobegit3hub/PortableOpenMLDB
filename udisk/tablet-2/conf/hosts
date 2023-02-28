@@ -1,0 +1,16 @@
+# format: host:port:zk_peer_port:zk_election_port WORKDIR
+# only host is required, other fields are optional.
+# zk_peer_port and zk_election_port only works for zookeeper
+
+[tablet]
+localhost:10921 /Users/tobe/code/PortableOpenMLDB/udisk/tablet-1
+localhost:10922 /Users/tobe/code/PortableOpenMLDB/udisk/tablet-2
+
+[nameserver]
+localhost:7527
+
+[apiserver]
+localhost:9080
+
+[taskmanager]
+localhost:9902

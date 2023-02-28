@@ -1,13 +1,16 @@
 #!/bin/bash
 
+cd "$(dirname "$0")"
+
 # Contant variables
 DIALOG_CANCEL=1
 DIALOG_ESC=255
 HEIGHT=0
 WIDTH=0
 
-exec 3>&1
-selection=$(dialog \
+while true; do
+  exec 3>&1
+  selection=$(dialog \
     --backtitle OpenMLDB \
     --clear \
     --cancel-label "Exit" \
@@ -33,10 +36,11 @@ selection=$(dialog \
       ;;
   esac
 
-case $selection in
+  case $selection in
     0 )
       clear
       echo "Program terminated."
+      exit 0
       ;;
     1 )
       ./start.sh
@@ -53,5 +57,8 @@ case $selection in
     5 )
       ./openmldb_cli.sh
       ;;
-esac
+  esac
 
+  read -n 1 -s -r -p "Press any key to continue"
+
+done

@@ -38,7 +38,7 @@ echo "export SPARK_HOME=${SPARK_HOME}" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 
 # Update OpenMLDB host config
 sedi '/tablet/d' $OPENMLDB_HOME/conf/hosts
-echo "[tablet]" >> $OPENMLDB_HOME/conf/hosts
+echo -e "\n[tablet]" >> $OPENMLDB_HOME/conf/hosts
 echo "localhost:${TABLET1_PORT} ${CURRENT_ROOT}/tablet-1" >> $OPENMLDB_HOME/conf/hosts
 echo "localhost:${TABLET2_PORT} ${CURRENT_ROOT}/tablet-2" >> $OPENMLDB_HOME/conf/hosts
 

@@ -1,13 +1,13 @@
 # Portable OpenMLDB
 
-The portable and out-of-the-box OpenMLDB cluster which can be run easily.
+The portable and out-of-the-box OpenMLDB cluster which can be run offline.
 
 Here are the features:
 
-* Setup and start OpenMLDB cluster without network.
-* Encapsulated in U Disk which can be run anywhere.
-* Easy to upgrade with the latest OpenMLDB version.
-* Persist the data of OpenMLDB cluster in U Disk.
+* Setup and start OpenMLDB cluster **without network**.
+* **Encapsulated in U Disk** which can be run anywhere.
+* Easy to **upgrade with the latest OpenMLDB** version.
+* **Persist the data** of OpenMLDB cluster in U Disk.
 
 ## Usage
 
@@ -15,7 +15,7 @@ Here are the features:
 2. Start and stop OpenMLDB cluster with `start.sh` and `stop.sh`.
 3. Test OpenMLDB cluster with `test.sh` and `openmldb_cli.sh`.
 
-If you have installed `dialog`, use the command-line `console.sh`.
+If you have installed `dialog`, use `console.sh` just like other GUI applications.
 
 ![](./images/portable_openmldb_console.png)
 

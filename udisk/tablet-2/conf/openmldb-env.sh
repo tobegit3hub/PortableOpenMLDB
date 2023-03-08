@@ -12,10 +12,10 @@ export OPENMLDB_TASKMANAGER_PORT=9902
 export OPENMLDB_APISERVER_PORT=9080
 
 # if OPENMLDB_USE_EXISTING_ZK_CLUSTER is set, will use existing zk cluster
-export OPENMLDB_USE_EXISTING_ZK_CLUSTER=false
+export OPENMLDB_USE_EXISTING_ZK_CLUSTER=true
 # the root path of zookeeper release, default is $OPENMLDB_HOME/zookeeper
 # if not exists, download from online
-export OPENMLDB_ZK_HOME=/Users/tobe/code/PortableOpenMLDB/udisk/apache-zookeeper-3.8.1-bin
+export OPENMLDB_ZK_HOME=/root/temp/apache-zookeeper-3.8.1-bin/
 # the zookeeper cluster address, if not set, will get from conf/hosts
 export OPENMLDB_ZK_CLUSTER=127.0.0.1:2181
 # zookeeper root path
@@ -28,7 +28,7 @@ export OPENMLDB_ZK_CLUSTER_PEER_PORT=2888
 export OPENMLDB_ZK_CLUSTER_ELECTION_PORT=3888
 
 # openmldb root path
-export OPENMLDB_HOME=/Users/tobe/code/PortableOpenMLDB/udisk/openmldb
+export OPENMLDB_HOME=/root/openmldb_linux_deploy/openmldb-linux/
 # the root path of openmldb spark release, default is $OPENMLDB_HOME/spark
 # if not exists, download from online
-export SPARK_HOME=/Users/tobe/code/PortableOpenMLDB/udisk/spark-3.2.1-bin-openmldbspark
+export SPARK_HOME=/root/temp/spark-3.2.1-bin-openmldbspark/

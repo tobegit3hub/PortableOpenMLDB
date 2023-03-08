@@ -22,7 +22,8 @@ echo "dataDir=${CURRENT_ROOT}/zookeeper_data" >> $ZOOKEEPER_HOME/conf/zoo.cfg
 
 # Update OpenMLDB env config
 sedi '/export OPENMLDB_MODE=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
-echo 'export OPENMLDB_MODE=${OPENMLDB_MODE:=cluster}' >> $OPENMLDB_HOME/conf/openmldb-env.sh
+# TODO: Append in the last line
+echo -e "\nexport OPENMLDB_MODE=cluster" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 sedi '/export OPENMLDB_USE_EXISTING_ZK_CLUSTER=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
 echo "export OPENMLDB_USE_EXISTING_ZK_CLUSTER=true" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 sedi '/export OPENMLDB_ZK_HOME=/d' $OPENMLDB_HOME/conf/openmldb-env.sh

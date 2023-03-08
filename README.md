@@ -33,9 +33,8 @@ The downloaded files can be run offline in Linux and MacOS. You can put it in ha
 | Cleanup Cluster | `./cleanup.sh` | This will cleanup all the data of ZooKeeper and OpenMLDB cluster. |
 | Test Cluster | `./test.sh` | You can run smoke test for OpenMLDB cluster. |
 | Access Cluster | `./openmldb_cli.sh` | You can use OpenMLDB CLI for more usage. |
-| Config Cluster | `./update_config.sh` | You can edit `openmldb.env` and update the configuration of ZooKeeper and OpenMLDB manually |
-| GUI Console | `./console.sh` | You can use the command-line console now. |
 | Upgrade OpenMLDB | `./upgrade.sh` | Upgrade OpenMLDB will clean up all the current data by default. You may backup the data before upgrading. |
+| GUI Console | `./console.sh` | You can use the command-line console now. |
 
 Notice that `dialog` is required for `./console.sh`. You can run the following command for Ubuntu.
 

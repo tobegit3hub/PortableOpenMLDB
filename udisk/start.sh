@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe
+set -e
 cd "$(dirname "$0")"
 source ./openmldb.env
 

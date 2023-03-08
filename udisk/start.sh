@@ -4,7 +4,8 @@ set -xe
 cd "$(dirname "$0")"
 source ./openmldb.env
 
-# TODO: Check if OpenMLDB starts or not
+# Check the requirements
+./check.sh
 
 # Update config for current path
 ./update_config.sh

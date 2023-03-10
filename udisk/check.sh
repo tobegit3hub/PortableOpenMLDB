@@ -8,11 +8,23 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+os=$(uname)
+
+if [ "$os" = "Darwin" ]; then
+  echo -e "${GREEN}MacOS checked!${NC}"
+elif [ "$os" = "Linux" ]; then
+  echo -e "${GREEN}Linux checked!${NC}"
+elif [[ "$os" == CYGWIN* || "$os" == MINGW* ]]; then
+  echo -e "${RED}OS checked fail, Windows is not supported yet!${NC}"
+else
+  echo -e "${RED}OS checked fail, $os is not supported yet!${NC}"
+fi
+
 if [ -n `which java` ]; then
   echo -e "${GREEN}Java checked!${NC}"
 else
   echo -e "${RED}Java checked fail, should install java first!${NC}"
-    exit -1
+  exit -1
 fi
 
 function check_port {

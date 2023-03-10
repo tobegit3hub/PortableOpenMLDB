@@ -48,11 +48,13 @@ cp $OPENMLDB_HOME/conf/nameserver.flags.template $OPENMLDB_HOME/conf/nameserver.
 
 # Update APIServer config
 cp $OPENMLDB_HOME/conf/apiserver.flags.template $OPENMLDB_HOME/conf/apiserver.flags
+sedi '/--endpoint=/d' $OPENMLDB_HOME/conf/apiserver.flags
+echo -e "\n--endpoint=0.0.0.0:9080" >> $OPENMLDB_HOME/conf/apiserver.flags
 
 # Update TaskManager config
 cp $OPENMLDB_HOME/conf/taskmanager.properties.template $OPENMLDB_HOME/conf/taskmanager.properties
 sedi '/offline.data.prefix=/d' $OPENMLDB_HOME/conf/taskmanager.properties
-echo "offline.data.prefix=${CURRENT_ROOT}/openmldb_offline_data/" >> $OPENMLDB_HOME/conf/taskmanager.properties
+echo "offline.data.prefix=file://${CURRENT_ROOT}/openmldb_offline_data/" >> $OPENMLDB_HOME/conf/taskmanager.properties
 sedi '/spark.home=/d' $OPENMLDB_HOME/conf/taskmanager.properties
 echo "spark.home=${SPARK_HOME}" >> $OPENMLDB_HOME/conf/taskmanager.properties
 

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portable-openmldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portable-openmldb
+  template:
+    metadata:
+      labels:
+        app: portable-openmldb
+    spec:
+      containers:
+      - name: portable-openmldb
+        image: tobegit3hub/portable-openmldb
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2181
+        - containerPort: 7527
+        - containerPort: 10921
+        - containerPort: 10922
+        - containerPort: 9080
+        - containerPort: 9902

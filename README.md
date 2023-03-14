@@ -33,19 +33,17 @@ The downloaded files can be run offline in Linux and MacOS. You can put the file
 
 ![](./images/portable_openmldb_console.png)
 
-Notice that `dialog` is required for `./console.sh`. You can run the following command to install in Ubuntu.
+Notice that `dialog` is required for `./console.sh`.
 
 ```
+# Install in Ubuntu
 apt install -y dialog
-```
 
-Or install with the following command in MacOS.
-
-```
+# Install in MacOS
 brew install dialog
 ```
 
-## Build From Scratch
+## Build from Scratch
 
 If you want to build the package file with custom binaries, please run with the following commands.
 
@@ -57,3 +55,30 @@ If you want to build the package file with custom binaries, please run with the 
 ./build_portable_openmldb.sh
 ```
 
+## Run with Docker
+
+Start the pre-built docker container.
+
+```
+docker run -it -p 2181:2181 -p 7527:7527 -p 10921:10921 -p 10922:10922 -p 9080:9080 -p 9902:9902 tobegit3hub/portable-openmldb
+```
+
+Build the docker image by yourself.
+
+```
+cd ./docker/
+
+./build_docker.sh
+```
+
+## Run in Kubernetes
+
+Start OpenMLDB service in Kubernetes cluster.
+
+```
+cd ./kubernets/
+
+kubectl create -f ./portable-openmldb-deployment.yaml
+
+kubectl create -f ./portable-openmldb-service.yaml
+```

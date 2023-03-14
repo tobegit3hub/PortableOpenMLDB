@@ -45,6 +45,14 @@ echo "localhost:${TABLET2_PORT} ${CURRENT_ROOT}/tablet-2" >> $OPENMLDB_HOME/conf
 
 # Update NameServer config
 cp $OPENMLDB_HOME/conf/nameserver.flags.template $OPENMLDB_HOME/conf/nameserver.flags
+sedi '/--endpoint=/d' $OPENMLDB_HOME/conf/nameserver.flags
+echo -e "\n--endpoint=0.0.0.0:7527" >> $OPENMLDB_HOME/conf/nameserver.flags
+
+# Update Tablet config
+sedi '/--endpoint=/d' ./tablet-1/conf/tablet.flags
+echo -e "--endpoint=0.0.0.0:10921" >> ./tablet-1/conf/tablet.flags
+sedi '/--endpoint=/d' ./tablet-2/conf/tablet.flags
+echo -e "--endpoint=0.0.0.0:10922" >> ./tablet-2/conf/tablet.flags
 
 # Update APIServer config
 cp $OPENMLDB_HOME/conf/apiserver.flags.template $OPENMLDB_HOME/conf/apiserver.flags
@@ -57,4 +65,5 @@ sedi '/offline.data.prefix=/d' $OPENMLDB_HOME/conf/taskmanager.properties
 echo "offline.data.prefix=file://${CURRENT_ROOT}/openmldb_offline_data/" >> $OPENMLDB_HOME/conf/taskmanager.properties
 sedi '/spark.home=/d' $OPENMLDB_HOME/conf/taskmanager.properties
 echo "spark.home=${SPARK_HOME}" >> $OPENMLDB_HOME/conf/taskmanager.properties
+
 

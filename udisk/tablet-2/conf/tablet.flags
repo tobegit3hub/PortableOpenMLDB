@@ -3,7 +3,6 @@
 # tablet.conf
 #--use_name=false
 #--port=9527
-# --endpoint=127.0.0.1:10921
 --role=tablet
 
 # --zk_cluster=127.0.0.1:2181
@@ -102,4 +101,5 @@
 # below configs are generated automatically
 --zk_cluster=127.0.0.1:2181
 --zk_root_path=/openmldb
---endpoint=localhost:10922
+
+--endpoint=0.0.0.0:10922

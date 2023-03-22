@@ -29,7 +29,7 @@ echo "export OPENMLDB_USE_EXISTING_ZK_CLUSTER=true" >> $OPENMLDB_HOME/conf/openm
 sedi '/export OPENMLDB_ZK_HOME=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
 echo "export OPENMLDB_ZK_HOME=${ZOOKEEPER_HOME}" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 sedi '/export OPENMLDB_ZK_CLUSTER=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
-echo "export OPENMLDB_ZK_CLUSTER=127.0.0.1:${ZOOKEEPER_PORT}" >> $OPENMLDB_HOME/conf/openmldb-env.sh
+echo "export OPENMLDB_ZK_CLUSTER=${HOST_IP}:${ZOOKEEPER_PORT}" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 sedi '/export OPENMLDB_ZK_ROOT_PATH=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
 echo "export OPENMLDB_ZK_ROOT_PATH=${ZOOKEEPER_ROOT_PATH}" >> $OPENMLDB_HOME/conf/openmldb-env.sh
 sedi '/export OPENMLDB_HOME=/d' $OPENMLDB_HOME/conf/openmldb-env.sh
@@ -46,18 +46,18 @@ echo "localhost:${TABLET2_PORT} ${CURRENT_ROOT}/tablet-2" >> $OPENMLDB_HOME/conf
 # Update NameServer config
 cp $OPENMLDB_HOME/conf/nameserver.flags.template $OPENMLDB_HOME/conf/nameserver.flags
 sedi '/--endpoint=/d' $OPENMLDB_HOME/conf/nameserver.flags
-echo -e "\n--endpoint=0.0.0.0:7527" >> $OPENMLDB_HOME/conf/nameserver.flags
+echo -e "\n--endpoint=${HOST_IP}:7527" >> $OPENMLDB_HOME/conf/nameserver.flags
 
 # Update Tablet config
 sedi '/--endpoint=/d' ./tablet-1/conf/tablet.flags
-echo -e "--endpoint=0.0.0.0:10921" >> ./tablet-1/conf/tablet.flags
+echo -e "--endpoint=${HOST_IP}:10921" >> ./tablet-1/conf/tablet.flags
 sedi '/--endpoint=/d' ./tablet-2/conf/tablet.flags
-echo -e "--endpoint=0.0.0.0:10922" >> ./tablet-2/conf/tablet.flags
+echo -e "--endpoint=${HOST_IP}:10922" >> ./tablet-2/conf/tablet.flags
 
 # Update APIServer config
 cp $OPENMLDB_HOME/conf/apiserver.flags.template $OPENMLDB_HOME/conf/apiserver.flags
 sedi '/--endpoint=/d' $OPENMLDB_HOME/conf/apiserver.flags
-echo -e "\n--endpoint=0.0.0.0:9080" >> $OPENMLDB_HOME/conf/apiserver.flags
+echo -e "\n--endpoint=${HOST_IP}:9080" >> $OPENMLDB_HOME/conf/apiserver.flags
 
 # Update TaskManager config
 cp $OPENMLDB_HOME/conf/taskmanager.properties.template $OPENMLDB_HOME/conf/taskmanager.properties

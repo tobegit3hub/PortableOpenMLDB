@@ -20,7 +20,7 @@ else
   echo -e "${RED}OS checked fail, $os is not supported yet!${NC}"
 fi
 
-if [ -n `which java` ]; then
+if [ -n `java` ]; then
   echo -e "${GREEN}Java checked!${NC}"
 else
   echo -e "${RED}Java checked fail, should install java first!${NC}"

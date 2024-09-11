@@ -13,7 +13,6 @@ version="${tag:1}"
 echo $version
 
 do_upgrade() {
-  set -x
   echo "Step1: Stop service and cleanup all data"
   ./cleanup.sh
 

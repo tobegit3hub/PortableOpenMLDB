@@ -3,17 +3,17 @@
 # zk_peer_port and zk_election_port only works for zookeeper
 
 [tablet]
-localhost:10921 /tmp/openmldb/tablet-1
-localhost:10922 /tmp/openmldb/tablet-2
+0.0.0.0:10921 /tmp/openmldb/tablet-1
+0.0.0.0:10922 /tmp/openmldb/tablet-2
 
 [nameserver]
-localhost:7527
+0.0.0.0:7527
 
 [apiserver]
-localhost:9080
+0.0.0.0:9080
 
 [taskmanager]
-localhost:9902
+0.0.0.0:9902
 
 [zookeeper]
-localhost:2181:2888:3888 /tmp/openmldb/zk-1
+0.0.0.0:2181:2888:3888 /tmp/openmldb/zk-1
